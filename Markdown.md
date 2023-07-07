@@ -1,4 +1,3 @@
-
 1. IP address: An IP address is a unique identifier assigned to each device on a computer network. 
 It is used to identify the device's location on the network and to facilitate communication between devices.
 IP addresses are typically represented as a series of numbers separated by periods (like , 192.168.1.1).
