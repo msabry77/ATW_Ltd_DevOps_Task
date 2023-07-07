@@ -22,83 +22,100 @@ These protocols use different algorithms to determine the best path for network 
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
+
+
 Steps of Sub-task #1 Linux Server Simulation:
 
-1- logging in to my aws console
-2- create an ubuntu machine so i can do my tasks  (EC2)
-3- create Key pair so i can loggin to my machine 
-4- launch instance 
-5- to connect to machine First Locate my private key file .
-6- connect to my maachine using ssh client with the user name of the machine and public DNS 
-7-  now we logged in to the ubuntu 
-8- 
-9- install apache2 using these commands
+1- Logging in to my aws console
+2- Create an ubuntu machine so i can do my tasks  (EC2)
+3- Create Key pair so i can loggin to my machine 
+4- Launch instance 
+5- To connect to machine First Locate my private key file .
+6- Connect to my maachine using ssh client with the user name of the machine and public DNS 
+7- Now we logged in to the ubuntu 
+8- Install dependence 
+9- Install apache2 using these commands
 	
-	1 sudo apt update        
-    2  sudo apt install apache2
-    3  sudo systemctl status apache2    //to check the status of apache2
+	sudo apt update        
+	sudo apt install apache2
+	sudo systemctl status apache2    # to check the status of apache2
 
-10- install mysql server using these commands 
-   
-	   1  sudo apt install mysql-server
-	   2  sudo systemctl start mysql.service
-	   3  systemctl mysql status
+10- install mysql server using these commands
+
+	sudo apt install mysql-server
+	sudo systemctl start mysql.service
+	systemctl mysql status
 
 11-  install php version 8.1
    
-   1 sudo apt install software-properties-common
-   2  sudo add-apt-repository ppa:ondrej/php
-   3  sudo apt -y install php8.1
-   4  php -v
+	sudo apt install software-properties-common
+	sudo add-apt-repository ppa:ondrej/php
+	sudo apt -y install php8.1
+	php -v 
 
 12- to configure the apache server 
-      1. sudo nano /etc/apache2/apache2.conf
-      2. modify the Document root to point to /var/www/html/   insted of /var/www/
-      3. save and restart apache2 using this command sudo systemctl restart apache2
+      	
+	sudo nano /etc/apache2/apache2.conf
+     
+   then modify the Document root to point to /var/www/html/   insted of /var/www/
+   the save and restart apache2 using this command 
+   
+   	sudo systemctl restart apache2
       
 13- simple helloworld.php code is in my repo
 
 14-  to create new database 
 		
-		CREATE DATABASE php_ddb;
+	CREATE DATABASE php_ddb;
 		
 15- to create new user ,and password 
    
-      CREATE USER 'msabry'@'localhost' IDENTIFIED BY 'msabry';
+	CREATE USER 'msabry'@'localhost' IDENTIFIED BY 'msabry';
       
-16-to  grants the new user full privileges on all tables and columns in the "php_db" database.
+16- To grants the new user full privileges on all tables and columns in the "php_db" database.
 
 
 	GRANT SELECT, INSERT, CREATE, ALTER, DROP, LOCK TABLES, CREATE TEMPORARY TABLES, DELETE, UPDATE, EXECUTE ON php_db .* TO'msabry'@'localhost';
 
+
 	FLUSH PRIVILEGES;
 
-17- code of modify in my repo   (visitors_ip_and_time.php)
+17- To handle  mysql Database server i installed phpmyadmin
+ 
+	sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
+ 	systemctl restart apache2
+
+18- The code after modifing is in my repo with name   (visitors_ip_and_time.php)
+
+19- this is photo of current database after testing the website with added ip's
+
+   ![image](https://github.com/msabry77/ATW_Ltd_DevOps_Task/assets/66013839/27fe10c0-b354-4060-aebb-911da948e3e4)
+
+
+Sub-task #2 Git & GitHub:
+
+1- To Initialize a new Git repository on your local machine use (git init)
+
+2- To create .gitignore use ( vi .gitignore ) then save and exit 
    
-
-Sub-task #2 Git &amp; GitHub:
-
-1- to  Initialize a new Git repository on your local machine use (git init)
-
-2- to create .gitignore use ( vi .gitignore ) then save and exit 
-   
-3-to commit my markdown document use this several commands 
+3-To commit my markdown document use this several commands 
 
 	git add .
 	git commit -m “my commit message ”
 
 4- logging in to my github repo 
 	
-	//to config my account 
+To config my account 
 	
 	git config --global user.emai"mohamedsabry5000@gmail.com"
-    git config --global user.name "msabry77"
+	git config --global user.name "msabry77"
     
-    //to remote with my repo 
+To remote with my repo 
     
-    git remote add origin https://github.com/msabry77/ATW_Ltd_DevOps_Task
-    git push -u origin master
-   //then loggin by my username and token 
+	git remote add origin https://github.com/msabry77/ATW_Ltd_DevOps_Task
+	git push -u origin master
+ 
+Then loggin by my username and token 
 	
    
 
