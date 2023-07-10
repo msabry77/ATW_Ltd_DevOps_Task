@@ -17,6 +17,9 @@ if ($mysqli -> connect_errno) {
 // Get the visitor's IP address
 $ip_address = $_SERVER['REMOTE_ADDR'];
 
+//to get the local time 
+date_default_timezone_set("Africa/Cairo");
+
 //Get the current time
 $time = date('Y-m-d H:i:s');
 
